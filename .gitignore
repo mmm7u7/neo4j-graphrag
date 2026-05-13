@@ -1,0 +1,16 @@
+# Neo4j exports
+*.csv
+*.json
+*.npy
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Sensitive config
+.env
+*.key
+
+# OS
+.DS_Store

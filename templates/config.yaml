@@ -1,0 +1,48 @@
+# GraphRAG Configuration Template
+# Copy and customize for your project
+
+# Neo4j Connection
+neo4j:
+  uri: "bolt://localhost:7687"
+  user: "neo4j"
+  password: "YOUR_PASSWORD"
+
+# LLM Backend (OpenAI-compatible)
+llm:
+  provider: "deepseek"  # deepseek / openai / zhipu / local
+  api_key: "YOUR_API_KEY"
+  base_url: "https://api.deepseek.com/v1"
+  model: "deepseek-chat"
+  temperature: 0.3
+  max_tokens: 2000
+
+# Vector Store
+vector:
+  # Embedding model selection
+  # Fast: paraphrase-multilingual-MiniLM-L12-v2
+  # Chinese: BAAI/bge-small-zh-v1.5 or BAAI/bge-large-zh-v1.5
+  model: "BAAI/bge-small-zh-v1.5"
+  
+  # Index settings
+  max_nodes: 10000
+  batch_size: 500
+  
+  # Retrieval settings
+  top_k: 10
+  min_score: 0.3
+  
+  # Chunk strategy: simple / standard / rich / graph
+  chunk_strategy: "standard"
+
+# Graph Query
+graph:
+  max_hops: 2
+  max_results: 20
+  include_properties: false
+
+# Prompt Settings
+prompt:
+  max_context_nodes: 8
+  max_graph_data: 10
+  include_schema: true
+  include_samples: true
